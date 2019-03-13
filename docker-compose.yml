@@ -13,16 +13,18 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: modelviewsetexample
     ports:
-      - "5432:5432"
+      - "5432"
     # data persistance in local mounting, because docker data is ephemeral
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     networks:
       - mynetwork
-  python:
-    container_name: python
-    image: python:3.6.8-alpine3.9
-    restart: always
+  pythonexample:
+    container_name: pythonexample
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # restart: always
     # python unbuffered fixed lagging output to the console
     environment:
       - "PYTHONUNBUFFERED=1"
@@ -35,8 +37,8 @@ services:
       - /DRF_ModelViewSet_Responsive_Example:/usr/src/modelviewsetexample
     networks:
       - mynetwork
-    command: python manage.py runserver 0:8000
-
+    command: >
+      sh -c "./wait.sh postgres:5432 -- python manage.py runserver 0.0.0.0:8000"
 volumes:
   postgres_data:
 networks:
