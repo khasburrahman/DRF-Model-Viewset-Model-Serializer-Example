@@ -14,6 +14,13 @@ in Dockerfile
 COPY /DRF_ModelViewSet_Responsive_Example /usr/src/modelviewsetexample
 ```
 
+### Allowed hosts
+- If you're using docker desktop without virtual box, skip this
+- If you're using virtual box, run `docker-machine ip` and put the ip to the `App\settings.py`
+```
+ALLOWED_HOSTS = ['<<your docker machine ip here>>', 'localhost']
+```
+
 ### To run the example for the first time: 
 1. clone the repo, cd inside to the repo directory and do:  
       - build the `pythonexample` image: `docker-compose build`
