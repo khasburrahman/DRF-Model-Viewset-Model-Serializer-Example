@@ -24,10 +24,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # restart: always
+    restart: always
     # python unbuffered fixed lagging output to the console
     environment:
-      - "PYTHONUNBUFFERED=1"
+      - "PYTHONUNBUFFERED=0"
     working_dir: /usr/src/modelviewsetexample
     depends_on:
       - "postgres"
