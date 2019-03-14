@@ -27,8 +27,8 @@ ALLOWED_HOSTS = ['<<your docker machine ip here>>', 'localhost']
       - start the service: `docker-compose up`
 2. open a new terminal, start the docker interactive container shell: `docker exec -it pythonexample sh`
       - migrate the database: `python manage.py migrate`
-      - create super user: `python manage.py createsuperuser` and follows the instruction
-
+      - run the seed command `python manage.py seed_example_data`
+      - (optional) for login to the django admin page:`<<app-ip>>/admin` create super user: `python manage.py createsuperuser` and follows the instruction
 
 ### Running the example for the next time
 1. just start the service, cd to the repo directory and `docker-compose up`
