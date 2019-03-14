@@ -2,9 +2,10 @@ from django.db import models
 import uuid
 
 # Create your models here.
-class Example(models.Model):
+class Book(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=50)
-    fielda = models.CharField(max_length=50)
-    fieldb = models.CharField(max_length=50)
-    fieldc = models.CharField(max_length=50)
+    author = models.CharField(max_length=50)
+    isbn = models.CharField(max_length=13)
+    price = models.DecimalField(max_digits=19, decimal_places=10)
+    synopsis = models.TextField()
