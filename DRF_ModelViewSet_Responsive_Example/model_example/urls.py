@@ -1,7 +1,7 @@
 from rest_framework import routers
-from model_example.views import ExampleViewSet
+from model_example.views import BookViewSet
 
 router = routers.SimpleRouter()
 
-router.register(r'example', ExampleViewSet)
+router.register(r'book', BookViewSet)
 urlpatterns = router.urls
