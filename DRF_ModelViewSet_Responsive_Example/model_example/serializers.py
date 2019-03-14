@@ -1,7 +1,7 @@
 from custom_class.dynamic_field_serializer import DynamicFieldSerializer
-from model_example.models import Example
+from model_example.models import Book
 
-class ExampleSerialzier(DynamicFieldSerializer):
+class BookSerialzier(DynamicFieldSerializer):
 	class Meta:
-		model = Example
+		model = Book
 		fields = ('__all__')

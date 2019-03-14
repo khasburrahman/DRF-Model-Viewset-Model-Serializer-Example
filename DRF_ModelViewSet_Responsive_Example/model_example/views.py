@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from model_example.serializers import ExampleSerialzier
-from model_example.models import Example
+from model_example.serializers import BookSerialzier
+from model_example.models import Book
 
-class ExampleViewSet(viewsets.ModelViewSet):
-    serializer_class = ExampleSerialzier
-    queryset = Example.objects.all()
+class BookViewSet(viewsets.ModelViewSet):
+    serializer_class = BookSerialzier
+    queryset = Book.objects.all()
 
 
