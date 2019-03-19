@@ -8,12 +8,12 @@ services:
     # if you're going to use this 
     # it's better to use a file outside the repo
     # read: https://docs.docker.com/compose/environment-variables/  
-    environment:
+    environment: &env_postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: modelviewsetexample
     ports:
-      - "5432"
+      - &port_postgres "5432"
     # data persistance in local mounting, because docker data is ephemeral
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -27,7 +27,10 @@ services:
     restart: always
     # python unbuffered fixed lagging output to the console
     environment:
-      - "PYTHONUNBUFFERED=0"
+      <<: *env_postgres
+      PYTHONUNBUFFERED: 0
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: *port_postgres
     working_dir: /usr/src/modelviewsetexample
     depends_on:
       - "postgres"
