@@ -1,4 +1,4 @@
-# DjangoModelViewSetExample
+# DRFPostgresDocker
 this example is using docker, install docker and docker-compose first before using it
 
 ### Docker volume mounting
