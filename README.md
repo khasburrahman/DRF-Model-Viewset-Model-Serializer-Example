@@ -10,4 +10,4 @@ Make sure you have python 3 installed, clone the repo and:
 ### Running the example for the next time
 - start the service: `python manage.py runserver 0:8000`
 
-This repo has a `docker flavor with postgresql` see the docker brach
+This repo has a `docker flavor with postgresql` see the docker brach: https://github.com/khasburrahman/DRFPostgresDocker/tree/DRF-+-POSTGRES-With-Docker
