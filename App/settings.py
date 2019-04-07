@@ -25,7 +25,7 @@ SECRET_KEY = '+ogo+s!%wo^gqio(=ljm#t=1sk_fu7r-wv$&l7gmwocd@t#^hj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.99.100', 'localhost']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'App.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('POSTGRES_DB', ''),
-        'USER': os.environ.get('POSTGRES_USER', ''),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', ''),
-        'HOST': os.environ.get('POSTGRES_HOST', ''),
-        'PORT': os.environ.get('POSTGRES_PORT', '')
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'example',
     }
 }
 
