@@ -4,6 +4,7 @@ WORKDIR /usr/src/modelviewsetexample
 
 COPY ./DRF_ModelViewSet_Responsive_Example/requirements.txt .
 
+# add the requirement for installing psycopg2 python postgresql adapter 
 RUN \
     apk add --no-cache postgresql-libs && \
     apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev && \
